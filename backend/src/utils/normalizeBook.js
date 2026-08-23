@@ -76,13 +76,13 @@ export const normalizeBook = (openBook, googleBook) => {
 
     isbn,
 
-    rating:
-      typeof googleInfo.averageRating === "number"
-        ? googleInfo.averageRating
-        : null,
+    rating: Number.isFinite(googleInfo.averageRating)
+      ? googleInfo.averageRating
+      : null,
 
-    ratingsCount:
-      typeof googleInfo.ratingsCount === "number" ? googleInfo.ratingsCount : 0,
+    ratingsCount: Number.isFinite(googleInfo.ratingsCount)
+      ? googleInfo.ratingsCount
+      : 0,
 
     publisher: openBook?.publisher?.[0] || googleInfo.publisher || "",
 

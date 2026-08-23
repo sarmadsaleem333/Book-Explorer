@@ -29,7 +29,7 @@ export const cleanIsbn = (isbn) => {
 
 const hasRating = (book) => {
   const info = book?.volumeInfo || {};
-  return Number.isFinite(info.averageRating) && Number(info.ratingsCount) > 0;
+  return Number.isFinite(info.averageRating);
 };
 
 const normalizeText = (value) =>
